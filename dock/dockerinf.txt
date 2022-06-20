@@ -1,0 +1,9 @@
+## make an image in docker 
+docker build -t <name> .
+## to run image
+docker run -p 8081:8080 <name>
+##docker file 
+FROM openjdk:17
+LABEL maintainer="javaguides.net"
+ADD target/gcompany-0.0.1-SNAPSHOT.jar test1.jar
+ENTRYPOINT ["java","-jar", "test1.jar"]
